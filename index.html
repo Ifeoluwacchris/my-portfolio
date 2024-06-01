@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="icon" type="images/x-icon" href="https://www.w3docs.com/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .mypics{
+      width: 7rem;
+      border-radius: 100px;
+    }
+    .my{
+      font-size: 3rem;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #270505;
+      color: #333;
+    }
+    
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em;
+    }
+    
+    .nav-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 15px;
+    }
+    
+    .nav-list li {
+      display: inline;
+    }
+    
+    .nav-list a {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .nav-list a:hover {
+      text-decoration: underline;
+    }
+    
+    .hero {
+      height: 400px;
+      color: #e5dddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-image: url('wallpaper.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .hero .btn {
+      background: #0d2845;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      display: inline-block;
+    }
+    
+    .section {
+      color: white;
+      padding: 20px;
+      background: #0e151b;
+      margin: 20px 0;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+      color: white;
+    }
+    
+    .skills-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .skills-list li {
+      background: #007BFF;
+      color: #fff;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 5px;
+    }
+    
+    .project-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    
+    .project-item {
+      color: black;
+      background: #f9f9f9;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      flex: 1 1 calc(33.333% - 40px);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .project-item h3 {
+      margin-top: 0;
+    }
+    
+    .project-item a {
+      text-decoration: none;
+      color: #c00f1e;
+    }
+    
+    .project-item a:hover {
+      color: #23527c;
+    }
+    
+    .project-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    
+    form input[type="submit"] {
+      background: #333;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    form input[type="submit"]:hover {
+      background: #555;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 1em 0;
+      background: #333;
+      color: #fff;
+    }
+    
+    #openMenu, #closeMenu {
+      display: none;
+    }
+    
+    @media screen and (max-width: 430px) {
+      nav {
+        width: 100%;
+        overflow-x: hidden;
+        display: flex;
+        justify-content: space-between;
+      }
+    
+      #openMenu, #closeMenu {
+        display: block;
+      }
+    
+      #mainMenu {
+        display: none;
+        height: 50%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgb(12, 2, 2);
+        z-index: 10;
+      }
+    
+      #closeMenu {
+        position: absolute;
+        top: 10px;
+        left: 5%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div id="openMenu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-list" id="mainMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li id="closeMenu"><i class="fas fa-times fa-2x"></i></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1 class="my">Welcome to My Portfolio</h1>
+      <a href="#about" class="btn">Learn More</a>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <img class="mypics" src="my-pics.jpg" alt="Profile Picture">
+    <p>My name is Ibinuolapo Abiodun Christopher, and I'm excited to share my work with you. I am a passionate web developer with a love for creating dynamic and responsive websites. I have experience in a variety of web technologies and I am always eager to learn more and take on new challenges.</p>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Git & GitHub</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div class="project-item">
+        <img src="dog.jpg" alt="Project 1 Image">
+        <a href="https://ifeoluwacchris.github.io/zingerfire/animal%20card">Animal tribute page</a>
+        <h3>Project 1</h3>
+        <p>Collect canine cuteness! Click the link above to access our dog trading card page, featuring furry friends from around the world.</p>
+      </div>
+      <div class="project-item">
+        <img src="steve.jpeg" alt="Project 2 Image">
+        <a href="https://ifeoluwacchris.github.io/zingerfire/human.html?authuser=0">Tribute page</a>
+        <h3>Project 2</h3>
+        <p>Celebrating the life and legacy of the man who revolutionized technology and inspired a generation. Click the link above to view more.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <form>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email"><br>
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message"></textarea><br>
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2024. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    let openMenu = document.querySelector('#openMenu');
+    let closeMenu = document.querySelector('#closeMenu');
+    let mainMenu = document.querySelector('#mainMenu');
+
+    openMenu.addEventListener('click', function () {
+      mainMenu.style.display = 'flex';
+    });
+
+    closeMenu.addEventListener('click', function () {
+      mainMenu.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
